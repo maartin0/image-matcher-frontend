@@ -31,11 +31,6 @@ export default class Clicker extends React.Component {
         // interval = setInterval(this.loadImages, 10000);
     }
 
-    componentWillUnmount = () => {
-        // clearInterval(interval);
-        // clearInterval(scrollInterval);
-    }
-
     render() {
         return (
             this.state.overlay

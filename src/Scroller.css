@@ -1,0 +1,32 @@
+body {
+    background-color: black;
+    color: white;
+}
+
+body div {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+img.display {
+    height: 30vh;
+    cursor: pointer;
+}
+
+img.full {
+    height: 50vh;
+    width: auto;
+}
+
+img {
+    animation-name: zoom;
+    animation-duration: 1s;
+    animation-timing-function: ease;
+}
+
+@keyframes zoom {
+    0% {
+        height: 0;
+        width: 0;
+    }
+}

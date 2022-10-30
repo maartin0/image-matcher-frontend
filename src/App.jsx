@@ -3,6 +3,7 @@ import './App.css';
 
 import React from 'react';
 import Clicker from "./Clicker";
+import Scroller from "./Scroller";
 
 export default class App extends React.Component {
 
@@ -10,15 +11,24 @@ export default class App extends React.Component {
     super(props);
 
     this.state = {
-        view: <Clicker />
-    }
+        index: 0,
+    };
+
+    this.toggle.bind(this);
+    this.keyDown.bind(this);
+  }
+
+  toggle() {
+      this.setState({ index: this.state.index + 1 });
+  }
+
+  keyDown(e) {
+      if (e.key === 'Tab') this.toggle();
   }
 
   render() {
-      return (
-          <div>
-              { this.state.view }
-          </div>
-      )
+      return this.state.index % 2 === 1
+          ? <Scroller onKeyDown={this.keyDown} />
+          : <Clicker onKeyDown={this.keyDown} />;
   }
 }
